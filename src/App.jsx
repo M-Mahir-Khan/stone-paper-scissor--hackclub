@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./App.css";
 
 const CHOICES = [
   { key: "stone", label: "Stone", emoji: "✊" },
@@ -20,7 +21,7 @@ export default function App() {
     setCpuChoice(cpuPick);
 
     if (choice.key === cpuPick.key) {
-      setResult("It's a Draw 🤝");
+      setResult("🤝 It's a Draw!");
     } else if (
       (choice.key === "stone" && cpuPick.key === "scissors") ||
       (choice.key === "paper" && cpuPick.key === "stone") ||
@@ -33,7 +34,6 @@ export default function App() {
       setScore((prev) => ({ ...prev, cpu: prev.cpu + 1 }));
     }
 
-    // Show modal
     const modal = new bootstrap.Modal(document.getElementById("resultModal"));
     modal.show();
   };
@@ -46,19 +46,19 @@ export default function App() {
   };
 
   return (
-    <main className="min-vh-100 d-flex align-items-center justify-content-center game-bg text-white p-4">
+    <main className="game-bg min-vh-100 d-flex align-items-center justify-content-center text-white p-4">
       <div className="container text-center">
         {/* Title */}
         <header className="mb-5">
-          <h1 className="display-3 fw-bold text-glow">Stone · Paper · Scissors</h1>
-          <p className="lead text-light">A fun duel against CPU 🎮</p>
+          <h1 className="display-3 fw-bold neon-text">Stone · Paper · Scissors</h1>
+          <p className="lead text-light">Play against CPU & test your luck! 🎮</p>
         </header>
 
         {/* Scoreboard */}
-        <div className="glass-card mb-5 p-3 d-flex justify-content-between align-items-center">
-          <span className="badge bg-primary fs-5">🧑 You: {score.user}</span>
+        <div className="scoreboard glass-card mb-5 p-3 d-flex justify-content-between align-items-center">
+          <span className="badge neon-badge fs-5">🧑 You: {score.user}</span>
           <button onClick={resetGame} className="btn btn-outline-light btn-sm">Reset</button>
-          <span className="badge bg-danger fs-5">🤖 CPU: {score.cpu}</span>
+          <span className="badge neon-badge fs-5">🤖 CPU: {score.cpu}</span>
         </div>
 
         {/* Choices */}
@@ -66,7 +66,7 @@ export default function App() {
           {CHOICES.map((c) => (
             <div className="col-12 col-sm-4" key={c.key}>
               <button
-                className="btn btn-lg choice-btn w-100 py-4"
+                className="choice-btn w-100 py-4"
                 onClick={() => playGame(c)}
               >
                 <span className="fs-1 d-block mb-2">{c.emoji}</span>
@@ -86,21 +86,20 @@ export default function App() {
           </div>
         </div>
 
-        {/* Result Modal */}
+        {/* Modal */}
         <div className="modal fade" id="resultModal" tabIndex="-1">
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content text-dark">
-              <div className="modal-header">
-                <h5 className="modal-title">Round Result</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+              <div className="modal-body text-center fs-3 fw-bold">
+                {result}
               </div>
-              <div className="modal-body fs-4 text-center">{result}</div>
             </div>
           </div>
         </div>
 
-        {/* Footer */}
-        <footer className="mt-5 text-light small">Made with ❤️ React + Bootstrap</footer>
+        <footer className="mt-5 text-light small">
+          Made with ❤️ by <a href="https://github.com/M-Mahir-Khan" target="_blank" rel="noreferrer">Mohammed Mahir</a>
+        </footer>
       </div>
     </main>
   );

@@ -1,28 +1,43 @@
 .game-bg {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
 }
 
-.text-glow {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080;
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .choice-btn {
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid transparent;
   color: white;
-  transition: all 0.3s ease;
   border-radius: 15px;
+  transition: all 0.3s ease;
 }
 
 .choice-btn:hover {
   border: 2px solid #fff;
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  transform: scale(1.15);
+  box-shadow: 0 0 20px #fff;
+}
+
+.neon-badge {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+  text-shadow: 0 0 5px #fff;
 }
