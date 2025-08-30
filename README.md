@@ -1,12 +1,47 @@
-# React + Vite
+# 🎮 Stone · Paper · Scissors  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and interactive implementation of the classic **Stone · Paper · Scissors** game, built with **React** and **Bootstrap**.  
 
-Currently, two official plugins are available:
+This project combines **fun gameplay** with a **polished arcade-style UI** featuring glowing buttons, glassmorphism cards, and an animated background. Users can duel against the CPU, track their score, and enjoy smooth animations.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features  
+- 🧑‍🤝‍🧑 **Player vs CPU** gameplay  
+- 🏆 **Scoreboard tracking** (User & CPU)  
+- 🎨 **Modern UI** with glassmorphism + neon effects  
+- 🎉 **Animated modal popup** after each round  
+- 🔄 **Reset option** to restart scores anytime  
+- ⚡ Built using **React + Bootstrap** for responsive design  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+
+
+## 🚀 Getting Started  
+
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/your-username/stone-paper-game-react.git
+cd stone-paper-game-react
+```
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
+### 3️⃣ Run the development server
+```bash
+npm run dev
+```
+
+---
+## 🛠️ Built With
+
+- React
+ – UI library
+
+- Bootstrap
+ – Styling & modal
+
+- Custom CSS (glassmorphism, gradients, neon effects)
+
